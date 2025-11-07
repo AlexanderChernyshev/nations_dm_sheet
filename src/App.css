@@ -1,0 +1,21 @@
+#root {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 2rem;
+  text-align: center;
+}
+
+.dice-interface {
+  display: flex;
+  flex-direction: row;
+}
+
+.total {
+  padding: 1rem;
+  border: 0.1rem solid white;
+}
+
+.modifier {
+  padding: 1rem;
+  border: 0.1rem solid white;
+}
