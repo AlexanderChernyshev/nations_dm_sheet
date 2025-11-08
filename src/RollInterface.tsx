@@ -1,0 +1,34 @@
+import { useState } from "react";
+
+function RollInterface() {
+  const [modifier, setModifier] = useState(0);
+
+  const [total, setTotal] = useState(0);
+
+  function handleModifierInput(event: React.ChangeEvent<HTMLInputElement>) {
+    setModifier(Number(event.target.value));
+  }
+
+  function calcTotal() {
+    const roll = Math.floor(Math.random() * 100) + 1;
+    const total = roll + modifier;
+
+    setTotal(total);
+  }
+
+  return (
+    <>
+      <button onClick={calcTotal}>Roll</button>
+      <section className="modifier">
+        <h3>Modifier</h3>
+        <input type="number" onChange={handleModifierInput}></input>
+      </section>
+      <section className="total">
+        <h3>Total</h3>
+        <p>{total}</p>
+      </section>
+    </>
+  );
+}
+
+export default RollInterface;
