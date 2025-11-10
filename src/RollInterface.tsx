@@ -16,8 +16,14 @@ function RollInterface() {
     setTotal(total);
   }
 
+  function reset() {
+    setModifier(0);
+    setTotal(0);
+  }
+
   return (
     <>
+      <button onClick={reset}>Reset</button>
       <button onClick={calcTotal}>Roll</button>
       <section className="modifier">
         <h3>Modifier</h3>
