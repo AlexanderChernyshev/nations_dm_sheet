@@ -5,6 +5,21 @@
   text-align: center;
 }
 
+.top-tools .dice-roller {
+  grid-column-start: 10;
+  grid-column-end: 11;
+  grid-row-start: 1;
+  grid-row-end: 2
+}
+
+.dice-roller {
+  display: flex;
+  flex-direction: column;
+  border: solid white 0.1rem;
+  padding: 1rem;
+  border-radius: 1rem
+}
+
 .dice-interface {
   display: flex;
   flex-direction: row;
@@ -23,8 +38,31 @@
 .roll-interface {
   display: flex;
   flex-direction: row;
+  gap: 0.3rem;
+}
+
+.roll-interface button {
+  background-color: #333333;
 }
 
 .roll-interface.reverse {
   flex-direction: row-reverse;
+}
+
+.nations-sheet {
+  display: flex;
+  flex-direction: column;
+  border: solid white 0.2rem;
+  padding: 1rem;
+  border-radius: 1rem;
+  margin-top: 1rem;
+}
+
+.top-tools {
+  display: grid;
+  grid-template-columns: repeat(10, 1fr);
+  grid-template-rows: repeat(10 1fr);
+  border: solid white 0.2rem;
+  padding: 1rem;
+  border-radius: 1rem;
 }
