@@ -1,6 +1,6 @@
 import { useState } from "react";
 
-function RollInterface() {
+function RollInterface({ reverse }: { reverse?: boolean }) {
   const [modifier, setModifier] = useState(0);
 
   const [total, setTotal] = useState(0);
@@ -22,7 +22,7 @@ function RollInterface() {
   }
 
   return (
-    <>
+    <section className={`roll-interface ${reverse ? "reverse" : ""}`}>
       <button onClick={reset}>Reset</button>
       <button onClick={calcTotal}>Roll</button>
       <section className="modifier">
@@ -33,7 +33,7 @@ function RollInterface() {
         <h3>Total</h3>
         <p>{total}</p>
       </section>
-    </>
+    </section>
   );
 }
 

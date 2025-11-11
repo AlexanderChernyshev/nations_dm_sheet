@@ -19,3 +19,12 @@
   padding: 1rem;
   border: 0.1rem solid white;
 }
+
+.roll-interface {
+  display: flex;
+  flex-direction: row;
+}
+
+.roll-interface.reverse {
+  flex-direction: row-reverse;
+}

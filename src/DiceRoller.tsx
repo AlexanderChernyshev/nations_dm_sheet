@@ -6,7 +6,7 @@ function DiceRoller() {
     <>
       <section className="dice-interface">
         <RollInterface />
-        <RollInterface />
+        <RollInterface reverse />
       </section>
     </>
   );
