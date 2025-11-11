@@ -1,4 +1,3 @@
-import { useState } from "react";
 import RollInterface from "./RollInterface.tsx";
 
 function DiceRoller() {
