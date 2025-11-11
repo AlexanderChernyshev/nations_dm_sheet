@@ -1,5 +1,6 @@
 import "./App.css";
 import DiceRoller from "./DiceRoller";
+import DateTracker from "./DateTracker";
 
 function App() {
   return (
@@ -7,6 +8,7 @@ function App() {
       <h1>Nations DM/GM Sheet</h1>
       <section className="top-tools">
         <DiceRoller />
+        <DateTracker />
       </section>
 
       <section className="nations-sheet">

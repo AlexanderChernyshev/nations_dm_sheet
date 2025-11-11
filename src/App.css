@@ -1,15 +1,18 @@
 #root {
-  max-width: 1280px;
-  margin: 0 auto;
+  height: 95vh;
+  width: 95vw;
   padding: 2rem;
   text-align: center;
 }
 
-.top-tools .dice-roller {
-  grid-column-start: 10;
-  grid-column-end: 11;
-  grid-row-start: 1;
-  grid-row-end: 2
+.top-tools {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  grid-template-rows: repeat(1 1fr);
+  border: solid white 0.2rem;
+  padding: 1rem;
+  border-radius: 1rem;
+  gap: 0.5rem;
 }
 
 .dice-roller {
@@ -17,7 +20,21 @@
   flex-direction: column;
   border: solid white 0.1rem;
   padding: 1rem;
-  border-radius: 1rem
+  border-radius: 1rem;
+  align-items: center;
+  justify-content: center;
+}
+
+.dice-roller h3 {
+  margin: 0;
+}
+
+.dice-roller p {
+  margin: 0;
+}
+
+.dice-roller input {
+  max-width: 5rem;
 }
 
 .dice-interface {
@@ -28,11 +45,13 @@
 .total {
   padding: 1rem;
   border: 0.1rem solid white;
+  border-radius: 1rem;
 }
 
 .modifier {
   padding: 1rem;
   border: 0.1rem solid white;
+  border-radius: 1rem;
 }
 
 .roll-interface {
@@ -58,11 +77,53 @@
   margin-top: 1rem;
 }
 
-.top-tools {
-  display: grid;
-  grid-template-columns: repeat(10, 1fr);
-  grid-template-rows: repeat(10 1fr);
-  border: solid white 0.2rem;
+.date-tracker {
+  display: flex;
+  flex-direction: row;
+  border: solid white 0.1rem;
   padding: 1rem;
   border-radius: 1rem;
+}
+
+.date-tracker p {
+  font-size: 2rem;
+  font-weight: 900;
+  margin: 0;
+}
+
+.date-tracker input {
+  max-width: 20rem;
+  min-width: 3rem;
+  field-sizing: content;
+  font-size: 2rem;
+}
+
+.date-tracker-years {
+  display: flex;
+  flex-direction: column;
+  border: solid white 0.1rem;
+  border-radius: 1rem;
+  align-items: center;
+  flex-grow: 1;
+  padding: 0.5rem;
+}
+
+.date-tracker-months {
+  display: flex;
+  flex-direction: column;
+  border: solid white 0.1rem;
+  border-radius: 1rem;
+  align-items: center;
+  flex-grow: 1;
+  padding: 0.5rem;
+}
+
+.date-tracker-days {
+  display: flex;
+  flex-direction: column;
+  border: solid white 0.1rem;
+  border-radius: 1rem;
+  align-items: center;
+  flex-grow: 1;
+  padding: 0.5rem;
 }

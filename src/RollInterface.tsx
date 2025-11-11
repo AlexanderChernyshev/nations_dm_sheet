@@ -27,7 +27,12 @@ function RollInterface({ reverse }: { reverse?: boolean }) {
       <button onClick={calcTotal}>Roll</button>
       <section className="modifier">
         <h3>Modifier</h3>
-        <input type="number" onChange={handleModifierInput}></input>
+        <input
+          type="number"
+          min="-100"
+          max="100"
+          onChange={handleModifierInput}
+        ></input>
       </section>
       <section className="total">
         <h3>Total</h3>
