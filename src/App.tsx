@@ -1,6 +1,7 @@
 import "./App.css";
 import DiceRoller from "./DiceRoller";
 import DateTracker from "./DateTracker";
+import NationSheet from "./NationSheet";
 
 function App() {
   return (
@@ -13,6 +14,7 @@ function App() {
 
       <section className="nations-sheet">
         <h2>Nations</h2>
+        <NationSheet />
         <button>+</button>
       </section>
     </>
