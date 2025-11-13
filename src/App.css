@@ -148,6 +148,12 @@
   font-weight: 700;
 }
 
+.nation-sheet section p {
+  margin: 0;
+}
+
 .nation-sheet section input {
   font-size: 1.2rem;
+  min-width: 1.5rem;
+  field-sizing: content;
 }
