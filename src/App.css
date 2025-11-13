@@ -127,3 +127,27 @@
   flex-grow: 1;
   padding: 0.5rem;
 }
+
+.nation-sheet {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 1rem;
+  padding: 0.5rem;
+  border: solid white 0.1rem;
+  border-radius: 0.5rem;
+}
+
+.nation-sheet section {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 0.5rem;
+  font-size: 1.2rem;
+  font-weight: 700;
+}
+
+.nation-sheet section input {
+  font-size: 1.2rem;
+}
