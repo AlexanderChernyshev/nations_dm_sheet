@@ -3,6 +3,10 @@ function NationSheet() {
     <section className="nation-sheet">
       <section className="flag-selector">
         <p>Flag</p>
+        <button popoverTarget="flagpopover">Open flag popover</button>
+        <div id="flagpopover" popover="auto">
+          The flags will be here...
+        </div>
       </section>
       <section className="nation-name">
         <p>Name</p>
