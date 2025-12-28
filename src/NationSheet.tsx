@@ -1,12 +1,32 @@
+import { useRef } from "react";
+
 function NationSheet() {
+  const dialogRef = useRef<HTMLDialogElement | null>(null);
+
+  function openFlags() {
+    dialogRef.current?.showModal();
+  }
+
+  function closeFlags() {
+    dialogRef.current?.close();
+  }
+
   return (
     <section className="nation-sheet">
       <section className="flag-selector">
         <p>Flag</p>
-        <button popoverTarget="flagpopover">Open flag popover</button>
-        <div id="flagpopover" popover="auto">
-          The flags will be here...
-        </div>
+        <button onClick={openFlags} className="flags-dialog-button">
+          <img src="/nations_dm_sheet_flags_01.svg" />
+        </button>
+        <dialog ref={dialogRef}>
+          <button autoFocus onClick={closeFlags}>
+            Close
+          </button>
+          <img src="/nations_dm_sheet_flags_01.svg" />
+          <img src="/nations_dm_sheet_flags_02.svg" />
+          <img src="/nations_dm_sheet_flags_03.svg" />
+          <img src="/nations_dm_sheet_flags_04.svg" />
+        </dialog>
       </section>
       <section className="nation-name">
         <p>Name</p>

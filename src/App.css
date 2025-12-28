@@ -157,3 +157,19 @@
   min-width: 1.5rem;
   field-sizing: content;
 }
+
+::backdrop {
+  background-image: linear-gradient(45deg,
+      gold,
+      goldenrod);
+  opacity: 0.75;
+}
+
+.flags-dialog-button {
+  padding: 0.1rem;
+}
+
+.flags-dialog-button img {
+  width: 4rem;
+  height: 3rem;
+}
