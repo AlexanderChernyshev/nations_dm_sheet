@@ -1,12 +1,20 @@
 import { useRef, useState } from "react";
 
+type Flag = {
+  id: number;
+  name: string;
+  url: string;
+};
+
 function NationSheet() {
-  const flagsData = [
-    {
-      id: 1,
-      name: "unaligned flag",
-      url: "/unaligned_flag_dmsheet.svg",
-    },
+  const unalignedFlag: Flag = {
+    id: 1,
+    name: "unaligned flag",
+    url: "/unaligned_flag_dmsheet.svg",
+  };
+
+  const flagsData: Flag[] = [
+    unalignedFlag,
     {
       id: 2,
       name: "flag1",
@@ -31,9 +39,7 @@ function NationSheet() {
 
   const dialogRef = useRef<HTMLDialogElement | null>(null);
 
-  const unalignedFlag = "/unaligned_flag_dmsheet.svg";
-
-  const [selectedFlag, setFlag] = useState<string | null>(null);
+  const [selectedFlag, setFlag] = useState<Flag | null>(null);
 
   function openFlags() {
     dialogRef.current?.showModal();
@@ -43,7 +49,7 @@ function NationSheet() {
     dialogRef.current?.close();
   }
 
-  function handleFlagSelection(flag: string) {
+  function handleFlagSelection(flag: Flag) {
     setFlag(flag);
     dialogRef.current?.close();
   }
@@ -53,50 +59,20 @@ function NationSheet() {
       <section className="flag-selector">
         <p>Flag</p>
         <button onClick={openFlags} className="flags-dialog-button">
-          <img src={selectedFlag ?? unalignedFlag} />
+          <img src={selectedFlag?.url ?? unalignedFlag.url} />
         </button>
         <dialog ref={dialogRef}>
           <button autoFocus onClick={closeFlags}>
             Close
           </button>
-          <button
-            onClick={() => handleFlagSelection("/unaligned_flag_dmsheet.svg")}
-            className="flag-select-button"
-          >
-            <img src="/unaligned_flag_dmsheet.svg" />
-          </button>
-          <button
-            onClick={() =>
-              handleFlagSelection("/nations_dm_sheet_flags_01.svg")
-            }
-            className="flag-select-button"
-          >
-            <img src="/nations_dm_sheet_flags_01.svg" />
-          </button>
-          <button
-            onClick={() =>
-              handleFlagSelection("/nations_dm_sheet_flags_02.svg")
-            }
-            className="flag-select-button"
-          >
-            <img src="/nations_dm_sheet_flags_02.svg" />
-          </button>
-          <button
-            onClick={() =>
-              handleFlagSelection("/nations_dm_sheet_flags_03.svg")
-            }
-            className="flag-select-button"
-          >
-            <img src="/nations_dm_sheet_flags_03.svg" />
-          </button>
-          <button
-            onClick={() =>
-              handleFlagSelection("/nations_dm_sheet_flags_04.svg")
-            }
-            className="flag-select-button"
-          >
-            <img src="/nations_dm_sheet_flags_04.svg" />
-          </button>
+          {flagsData.map((flag) => (
+            <button
+              onClick={() => handleFlagSelection(flag)}
+              className="flag-select-button"
+            >
+              <img src={flag.url} />
+            </button>
+          ))}
         </dialog>
       </section>
       <section className="nation-name">

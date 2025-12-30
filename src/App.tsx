@@ -15,6 +15,8 @@ function App() {
       <section className="nations-sheet">
         <h2>Nations</h2>
         <NationSheet />
+        <NationSheet />
+        <NationSheet />
         <button>+</button>
       </section>
     </>
