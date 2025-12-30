@@ -1,6 +1,34 @@
 import { useRef, useState } from "react";
 
 function NationSheet() {
+  const flagsData = [
+    {
+      id: 1,
+      name: "unaligned flag",
+      url: "/unaligned_flag_dmsheet.svg",
+    },
+    {
+      id: 2,
+      name: "flag1",
+      url: "/nations_dm_sheet_flags_01.svg",
+    },
+    {
+      id: 3,
+      name: "flag2",
+      url: "/nations_dm_sheet_flags_02.svg",
+    },
+    {
+      id: 4,
+      name: "flag3",
+      url: "/nations_dm_sheet_flags_03.svg",
+    },
+    {
+      id: 5,
+      name: "flag4",
+      url: "/nations_dm_sheet_flags_04.svg",
+    },
+  ];
+
   const dialogRef = useRef<HTMLDialogElement | null>(null);
 
   const unalignedFlag = "/unaligned_flag_dmsheet.svg";
