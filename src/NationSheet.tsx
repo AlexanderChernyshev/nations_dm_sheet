@@ -1,45 +1,12 @@
-import { useRef, useState } from "react";
-import { type Flag, unalignedFlag, flagsData } from "./Flag.tsx";
+import { useState } from "react";
+import { type FlagInfo, Flag } from "./Flag.tsx";
 
 function NationSheet() {
-  const dialogRef = useRef<HTMLDialogElement | null>(null);
-
-  const [selectedFlag, setFlag] = useState<Flag | null>(null);
-
-  function openFlags() {
-    dialogRef.current?.showModal();
-  }
-
-  function closeFlags() {
-    dialogRef.current?.close();
-  }
-
-  function handleFlagSelection(flag: Flag) {
-    setFlag(flag);
-    dialogRef.current?.close();
-  }
+  const [flag, setFlag] = useState<FlagInfo | null>(null);
 
   return (
     <section className="nation-sheet">
-      <section className="flag-selector">
-        <p>Flag</p>
-        <button onClick={openFlags} className="flags-dialog-button">
-          <img src={selectedFlag?.url ?? unalignedFlag.url} />
-        </button>
-        <dialog ref={dialogRef}>
-          <button autoFocus onClick={closeFlags}>
-            Close
-          </button>
-          {flagsData.map((flag) => (
-            <button
-              onClick={() => handleFlagSelection(flag)}
-              className="flag-select-button"
-            >
-              <img src={flag.url} />
-            </button>
-          ))}
-        </dialog>
-      </section>
+      <Flag onFlagSelected={setFlag} selectedFlag={flag} />
       <section className="nation-name">
         <p>Name</p>
         <input type="text"></input>
