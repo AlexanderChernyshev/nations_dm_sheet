@@ -2,6 +2,7 @@ import "./App.css";
 import DiceRoller from "./DiceRoller";
 import DateTracker from "./DateTracker";
 import NationSheet from "./NationSheet";
+import NationSheetAddButton from "./NationSheetAddButton";
 
 function App() {
   return (
@@ -17,7 +18,7 @@ function App() {
         <NationSheet />
         <NationSheet />
         <NationSheet />
-        <button>+</button>
+        <NationSheetAddButton />
       </section>
     </>
   );
