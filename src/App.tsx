@@ -19,10 +19,17 @@ function App() {
     getRandID(),
   ]);
 
-  const nationSheets = nationsSheetsList.map((id) => <NationSheet key={id} />);
+  const nationSheets = nationsSheetsList.map((id) => (
+    <NationSheet key={id} onDelete={deleteSheet} id={id} />
+  ));
 
   function addSheet() {
     setNationsSheetsList([...nationsSheetsList, getRandID()]);
+  }
+
+  function deleteSheet(activeID: number) {
+    const newArr = nationsSheetsList.filter((id) => id !== activeID);
+    setNationsSheetsList(newArr);
   }
 
   return (
