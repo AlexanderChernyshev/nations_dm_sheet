@@ -20,7 +20,12 @@ function App() {
   ]);
 
   const nationSheets = nationsSheetsList.map((id) => (
-    <NationSheet key={id} onDelete={deleteSheet} id={id} />
+    <NationSheet
+      key={id}
+      onDelete={() => {
+        deleteSheet(id);
+      }}
+    />
   ));
 
   function addSheet() {
