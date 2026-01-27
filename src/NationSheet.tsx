@@ -1,5 +1,6 @@
 import { useState } from "react";
 import { type FlagInfo, Flag } from "./Flag.tsx";
+import Population from "./Population.tsx";
 
 function NationSheet({ onDelete }: { onDelete: () => void }) {
   const [flag, setFlag] = useState<FlagInfo | null>(null);
@@ -16,6 +17,7 @@ function NationSheet({ onDelete }: { onDelete: () => void }) {
           <p>Color</p>
           <input type="color"></input>
         </section>
+        <Population />
       </div>
       <button onClick={onDelete}>delete</button>
     </section>

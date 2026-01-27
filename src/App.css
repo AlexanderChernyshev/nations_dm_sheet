@@ -200,3 +200,21 @@ dialog {
 dialog button {
   background-color: var(--greens-dark);
 }
+
+.population-field {
+  background-color: var(--greens-light);
+}
+
+.pops-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  gap: 1rem;
+}
+
+.pop {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-color: var(--greens-light2);
+  gap: 1rem;
+}
