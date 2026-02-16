@@ -7,13 +7,13 @@
 :root {
   --subsec-dark: #333333;
   --subsec-light: #404040;
-  --subsec-light2: #4D4D4D;
+  --subsec-light2: #4d4d4d;
   --button-color: #595959;
 
   --greens-dark: #515742;
-  --greens-light: #5F654D;
-  --greens-light2: #6D7458;
-  --greens-buttons: #7A8263;
+  --greens-light: #5f654d;
+  --greens-light2: #6d7458;
+  --greens-buttons: #7a8263;
 }
 
 .top-tools {
@@ -158,7 +158,6 @@
   min-width: 1.5rem;
   field-sizing: content;
   background-color: var(--greens-dark);
-
 }
 
 .nation-sheet div {
@@ -167,10 +166,8 @@
 }
 
 ::backdrop {
-  background-image: linear-gradient(45deg,
-      black,
-      rgb(29, 29, 29));
-  opacity: 0.90;
+  background-image: linear-gradient(45deg, black, rgb(29, 29, 29));
+  opacity: 0.9;
 }
 
 .flags-dialog-button {
@@ -217,4 +214,9 @@ dialog button {
   align-items: center;
   background-color: var(--greens-light2);
   gap: 1rem;
+  padding: 0.5rem;
+}
+
+.pop input {
+  field-sizing: content;
 }
