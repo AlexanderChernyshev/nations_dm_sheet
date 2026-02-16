@@ -4,10 +4,11 @@ function Population() {
   return (
     <section className="population-field">
       <p>Population</p>
-      <div className="pops-grid"></div>
-      <Pop />
-      <Pop />
-      <Pop />
+      <div className="pops-grid">
+        <Pop />
+        <Pop />
+        <Pop />
+      </div>
     </section>
   );
 }
