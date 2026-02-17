@@ -1,7 +1,7 @@
 function Pop() {
   return (
     <div className="pop">
-      <button>
+      <button className="pop-portrait">
         <img></img>
       </button>
       <input type="text" placeholder="Name" id="pop-name"></input>
