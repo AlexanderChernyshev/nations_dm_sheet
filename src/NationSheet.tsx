@@ -7,7 +7,7 @@ function NationSheet({ onDelete }: { onDelete: () => void }) {
 
   return (
     <section className="nation-sheet">
-      <div>
+      <div className="nation-sheet-header">
         <Flag onFlagSelected={setFlag} selectedFlag={flag} />
         <section className="nation-name">
           <p>Name</p>

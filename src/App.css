@@ -160,7 +160,7 @@
   background-color: var(--greens-dark);
 }
 
-.nation-sheet div {
+.nation-sheet-header {
   display: flex;
   flex-direction: row;
 }
