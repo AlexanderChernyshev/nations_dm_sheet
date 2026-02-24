@@ -1,47 +1,12 @@
 import { useRef } from "react";
-
-export type FlagInfo = {
-  id: number;
-  name: string;
-  url: string;
-};
-
-export const unalignedFlag: FlagInfo = {
-  id: 1,
-  name: "unaligned flag",
-  url: "/unaligned_flag_dmsheet.svg",
-};
-
-export const flagsData: FlagInfo[] = [
-  unalignedFlag,
-  {
-    id: 2,
-    name: "flag1",
-    url: "/nations_dm_sheet_flags_01.svg",
-  },
-  {
-    id: 3,
-    name: "flag2",
-    url: "/nations_dm_sheet_flags_02.svg",
-  },
-  {
-    id: 4,
-    name: "flag3",
-    url: "/nations_dm_sheet_flags_03.svg",
-  },
-  {
-    id: 5,
-    name: "flag4",
-    url: "/nations_dm_sheet_flags_04.svg",
-  },
-];
+import { type FlagInfo, flagsData, unalignedFlag } from "./types";
 
 export function Flag({
   selectedFlag,
   onFlagSelected,
 }: {
   selectedFlag: FlagInfo | null;
-  onFlagSelected: Function;
+  onFlagSelected: (flag: FlagInfo) => void;
 }) {
   const dialogRef = useRef<HTMLDialogElement | null>(null);
 

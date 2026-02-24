@@ -1,9 +1,13 @@
+import { useState } from "react";
+import { PopIcon } from "./PopIcon";
+import { type PopIconInfo } from "./types";
+
 function Pop({ onDelete }: { onDelete: () => void }) {
+  const [icon, setIcon] = useState<PopIconInfo | null>(null);
+
   return (
     <div className="pop">
-      <button className="pop-portrait">
-        <img></img>
-      </button>
+      <PopIcon selectedIcon={icon} onIconSelected={setIcon} />
       <input type="text" placeholder="Name" id="pop-name"></input>
       <input type="number" placeholder="Count" id="pop-count"></input>
       <button onClick={onDelete}>Delete</button>
