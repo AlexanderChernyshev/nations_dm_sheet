@@ -1,5 +1,6 @@
 import { useState } from "react";
-import { type FlagInfo, Flag } from "./Flag.tsx";
+import { type FlagInfo } from "./types.ts";
+import { Flag } from "./Flag.tsx";
 import Population from "./Population.tsx";
 
 function NationSheet({ onDelete }: { onDelete: () => void }) {

@@ -226,7 +226,29 @@ dialog button {
 }
 
 .pop-portrait {
-  font-size: 1rem;
-  width: 2rem;
-  height: 2rem;
+  font-size: 1.5rem;
+  width: 3rem;
+  height: 3rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0;
+  border-radius: 50%;
+}
+
+.pop-icon-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 0.5rem;
+  padding: 1rem;
+}
+
+.pop-icon-select-button {
+  font-size: 2rem;
+  width: 3.5rem;
+  height: 3.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0;
 }
