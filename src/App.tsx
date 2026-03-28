@@ -2,40 +2,22 @@ import "./App.css";
 import DiceRoller from "./DiceRoller";
 import DateTracker from "./DateTracker";
 import NationSheet from "./NationSheet";
-import { useState } from "react";
+import { useAppDispatch, useAppSelector } from "./hooks";
+import { addNation, removeNation } from "./slices/nationsSlice";
 
 function App() {
-  function getRandID() {
-    const min: number = 1;
-    const max: number = 999;
-    const minCeiled = Math.ceil(min);
-    const maxFloored = Math.floor(max);
-    return Math.floor(Math.random() * (maxFloored - minCeiled) + minCeiled); // The maximum is exclusive and the minimum is inclusive
-  }
+  const nations = useAppSelector((state) => state.nations.nations);
+  const dispatch = useAppDispatch();
 
-  const [nationsSheetsList, setNationsSheetsList] = useState([
-    getRandID(),
-    getRandID(),
-    getRandID(),
-  ]);
-
-  const nationSheets = nationsSheetsList.map((id) => (
+  const nationSheets = nations.map((nation) => (
     <NationSheet
-      key={id}
+      key={nation.id}
+      id={nation.id}
       onDelete={() => {
-        deleteSheet(id);
+        dispatch(removeNation(nation.id));
       }}
     />
   ));
-
-  function addSheet() {
-    setNationsSheetsList([...nationsSheetsList, getRandID()]);
-  }
-
-  function deleteSheet(activeID: number) {
-    const newArr = nationsSheetsList.filter((id) => id !== activeID);
-    setNationsSheetsList(newArr);
-  }
 
   return (
     <>
@@ -48,7 +30,7 @@ function App() {
       <section className="nations-sheet">
         <h2>Nations</h2>
         {nationSheets}
-        <button onClick={addSheet}>+</button>
+        <button onClick={() => dispatch(addNation())}>+</button>
       </section>
     </>
   );
